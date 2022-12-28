@@ -70,3 +70,13 @@ describe("calculator.js", ()=>{
         expect(calculator1.subtract).toBeDefined();
     });
 });
+
+describe("convert.js", ()=> {
+    it("should convert decimal to hexadecimal", function() {
+      expect(decimalToHexadecimal(65534)).toEqual("FFFE");
+      expect(decimalToHexadecimal(255)).toEqual("FF");
+      expect(decimalToHexadecimal(16)).toEqual("10");
+      expect(decimalToHexadecimal(10)).toEqual("A");
+      expect(decimalToHexadecimal(0)).toEqual("0");
+    });
+  });
