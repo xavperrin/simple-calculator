@@ -71,7 +71,7 @@ describe("calculator.js", ()=>{
     });
 });
 
-describe("decimal2Hexadecimal", function() {
+describe("convert.js", function() {
     it("should convert decimal to hexadecimal", function() {
       expect(decimal2Hexadecimal(65534)).toEqual("0xFFFE");
       expect(decimal2Hexadecimal(255)).toEqual("0xFF");
@@ -79,5 +79,10 @@ describe("decimal2Hexadecimal", function() {
       expect(decimal2Hexadecimal(10)).toEqual("0xA");
       expect(decimal2Hexadecimal(0)).toEqual("0x0");
     });
+    it("should check if Date is Valid", function(){
+        expect(isDateValid('December 27, 2022 15:00:00')).toBeTruthy();
+        expect(isDateValid('December 32, 2022 15:00:00')).toBeFalsy();
+    })
   });
   
+
