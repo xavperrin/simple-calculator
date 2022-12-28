@@ -71,12 +71,13 @@ describe("calculator.js", ()=>{
     });
 });
 
-describe("convert.js", ()=> {
-    it("should convert decimal to hexadecimal", ()=> {
-      expect(decimalToHexadecimal(65534)).toEqual("FFFE");
-      expect(decimalToHexadecimal(255)).toEqual("FF");
-      expect(decimalToHexadecimal(16)).toEqual("10");
-      expect(decimalToHexadecimal(10)).toEqual("A");
-      expect(decimalToHexadecimal(0)).toEqual("0");
+describe("decimal2Hexadecimal", function() {
+    it("should convert decimal to hexadecimal", function() {
+      expect(decimal2Hexadecimal(65534)).toEqual("0xFFFE");
+      expect(decimal2Hexadecimal(255)).toEqual("0xFF");
+      expect(decimal2Hexadecimal(16)).toEqual("0x10");
+      expect(decimal2Hexadecimal(10)).toEqual("0xA");
+      expect(decimal2Hexadecimal(0)).toEqual("0x0");
     });
   });
+  

@@ -1,4 +1,4 @@
-function decimalToHexadecimal(decimal) {
+function decimal2Hexadecimal(decimal) {
   let hexadecimal = "";
   while (decimal > 0 || hexadecimal === "") {
     let remainder = decimal % 16;
@@ -9,5 +9,5 @@ function decimalToHexadecimal(decimal) {
     }
     decimal = Math.floor(decimal / 16);
   }
-  return hexadecimal;
+  return "0x" + hexadecimal;
 }
