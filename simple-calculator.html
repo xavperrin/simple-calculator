@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple calculator</title>
+    <script type="text/javascript" src="./calculator.js"></script>
+        <link href="./style.css" rel="stylesheet" >
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
+
+    
+</head>
+<body class="body">
+
+    <h1 class="title">Simples calculator</h1>
+    
+    <input placeholder="Enter your values" title="calculator" value="1+2" class="input" id="txtbox" type="text" onchange="calculate(this.value)" />
+    
+    <div class="result-container">
+        <div class="title">Result</div>
+        <span id="result" >3</span>
+    </div>
+</body>
+<script type="text/javascript" src="./main.js" ></script>
+</html>
