@@ -72,7 +72,7 @@ describe("calculator.js", ()=>{
 });
 
 describe("convert.js", ()=> {
-    it("should convert decimal to hexadecimal", function() {
+    it("should convert decimal to hexadecimal", ()=> {
       expect(decimalToHexadecimal(65534)).toEqual("FFFE");
       expect(decimalToHexadecimal(255)).toEqual("FF");
       expect(decimalToHexadecimal(16)).toEqual("10");
