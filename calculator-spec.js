@@ -50,4 +50,23 @@ describe("calculator.js", ()=>{
         expect(calculator).toBeTruthy();
         expect(calculator2).toBeTruthy();
     });
+
+    it('instantiate unique object', function(){
+        //TODOS: Expectations
+        const calculator1=new Calculator();
+        const calculator2=new Calculator();
+        // expect are unique;
+        expect(calculator1).not.toBe(calculator2);
+        
+    });
+
+    it('has common operations', function(){
+        //TODOS: Expectations
+        const calculator1=new Calculator();
+        // expect are unique;
+        expect(calculator1.add).toBeDefined();// or not.toBeUndefined()
+        expect(calculator1.multiply).toBeDefined();
+        expect(calculator1.divide).toBeDefined();
+        expect(calculator1.subtract).toBeDefined();
+    });
 });
