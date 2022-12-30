@@ -101,6 +101,10 @@ describe("calculator.js", ()=>{
        expect(calculator.add(20)).toBe(70);
        expect(calculator.total).toMatch(/-?\d+/);
        expect(typeof calculator.total).toMatch('number');
+       // asymmetric matcher
+       // not equal in each side
+       expect(calculator.total).toEqual(jasmine.anything());
+       expect(()=>{}).toEqual(jasmine.anything());// All minus null & undefined
     })
 });
 
