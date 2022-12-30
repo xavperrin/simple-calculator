@@ -43,12 +43,17 @@ describe("calculator.js", ()=>{
     });
 
     it('can be instantiated', function(){
-        //TODOS: Expectations
+        //TODOS: Expectations*
+        jasmine.addMatchers(customMatchers);//register
         const calculator=new Calculator();
         const calculator2=new Calculator();
         // expect total to be truthy;
+
+        expect(calculator).toBeCalculator();// custom > registred into jasmine
+        expect(2).not.toBeCalculator();// expect to fail
         expect(calculator).toBeTruthy();
         expect(calculator2).toBeTruthy();
+        expect(calculator).toEqual(calculator2); 
         expect(calculator.constructor.name).toContain("Calc");
 
     });
