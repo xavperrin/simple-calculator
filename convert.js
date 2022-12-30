@@ -12,6 +12,9 @@ function decimal2Hexadecimal(decimal) {
   return "0x" + hexadecimal;
 }
 
-function isDateValid(date){
+function isDateValid(date) {
+  if (date == null || date === undefined) {
+    return false;
+  }
   return !Number.isNaN(new Date(date).valueOf());
 }
