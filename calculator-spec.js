@@ -49,7 +49,7 @@ describe("calculator.js", ()=>{
         // expect total to be truthy;
         expect(calculator).toBeTruthy();
         expect(calculator2).toBeTruthy();
-        expect(calculator.constructor.name /* Calculator */).toContain("Calc");
+        expect(calculator.constructor.name).toContain("Calc");
 
     });
 
@@ -75,6 +75,23 @@ describe("calculator.js", ()=>{
         const calculator=new Calculator();
         calculator.total=null;
         expect(calculator.total).toBeNull();
+    })
+
+    it('does not handle NaN', ()=>{
+        const calculator=new Calculator;
+        calculator.total=20;
+        calculator.multiply("a")
+       expect(calculator.total).toBeNaN();
+
+    })
+
+    it('does handle divide by zero', ()=>{
+        const calculator=new Calculator;
+        calculator.total=20;
+       
+        expect(()=>{calculator.divide(0);}).toThrow();
+        expect(()=>{calculator.divide(0);}).toThrowError(Error);
+        expect(()=>{calculator.divide(0);}).toThrowError(Error, "Cannot divide by zero");
     })
 });
 

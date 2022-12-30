@@ -17,7 +17,7 @@ let Calculator = class {
 
     divide(b){
         if(b===0)
-         throw new Error(`division par zero`); 
+         throw new Error(`Cannot divide by zero`); 
         return this.total=this.total/b;
       }
 }                                                                                                                    
