@@ -49,6 +49,8 @@ describe("calculator.js", ()=>{
         // expect total to be truthy;
         expect(calculator).toBeTruthy();
         expect(calculator2).toBeTruthy();
+        expect(calculator.constructor.name /* Calculator */).toContain("Calc");
+
     });
 
     it('instantiate unique object', function(){
@@ -69,7 +71,7 @@ describe("calculator.js", ()=>{
         expect(calculator1.divide).toBeDefined();
         expect(calculator1.subtract).toBeDefined();
     });
-    it('can overwrite total', ()=>{
+    it(' ', ()=>{
         const calculator=new Calculator();
         calculator.total=null;
         expect(calculator.total).toBeNull();
