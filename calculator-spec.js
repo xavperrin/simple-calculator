@@ -93,6 +93,15 @@ describe("calculator.js", ()=>{
         expect(()=>{calculator.divide(0);}).toThrowError(Error);
         expect(()=>{calculator.divide(0);}).toThrowError(Error, "Cannot divide by zero");
     })
+
+    it('returns total', ()=>{
+        const calculator=new Calculator;
+        calculator.total=50;
+       
+       expect(calculator.add(20)).toBe(70);
+       expect(calculator.total).toMatch(/-?\d+/);
+       expect(typeof calculator.total).toMatch('number');
+    })
 });
 
 describe("convert.js", function() {
