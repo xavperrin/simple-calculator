@@ -5,7 +5,7 @@ let Calculator = class {
     }
    
 
-    add=(number)=>{
+    add(number){
       return this.total=number+this.total;
     }
     subtract(b){
