@@ -1,8 +1,22 @@
 describe("calculator.js", ()=>{
+
     describe("Calculator", ()=>{
+        let calculator1;
+        let calculator2;
+        beforeEach(()=>{
+            //anything inside this block execute before
+            //each spec (it) inside describe
+            calculator= new Calculator();
+            calculator2=new Calculator();
+        });
+        afterEach(()=>{
+            //anything inside this block execute after
+            //each spec (it) inside describe
+        });
+        
         it('should initialize total', function(){
             //TODOS: Expectations
-            const calculator=new Calculator();
+            
             
             // expect total to be 0;
             expect(calculator.total).toBe(0);
@@ -12,8 +26,8 @@ describe("calculator.js", ()=>{
         it('can be instantiated', function(){
             //TODOS: Expectations*
             jasmine.addMatchers(customMatchers);//register
-            const calculator=new Calculator();
-            const calculator2=new Calculator();
+            calculator=new Calculator();
+            calculator2=new Calculator();
             // expect total to be truthy;
 
             expect(calculator).toBeCalculator();// custom > registred into jasmine
@@ -27,24 +41,21 @@ describe("calculator.js", ()=>{
 
         it('instantiate unique object', function(){
             //TODOS: Expectations
-            const calculator1=new Calculator();
-            const calculator2=new Calculator();
             // expect are unique;
-            expect(calculator1).not.toBe(calculator2);
+            expect(calculator).not.toBe(calculator2);
             
         });
 
         it('has common operations', function(){
-            //TODOS: Expectations
-            const calculator1=new Calculator();
+
             // expect are unique;
-            expect(calculator1.add).toBeDefined();// or not.toBeUndefined()
-            expect(calculator1.multiply).toBeDefined();
-            expect(calculator1.divide).toBeDefined();
-            expect(calculator1.subtract).toBeDefined();
+            expect(calculator.add).toBeDefined();// or not.toBeUndefined()
+            expect(calculator.multiply).toBeDefined();
+            expect(calculator.divide).toBeDefined();
+            expect(calculator.subtract).toBeDefined();
         });
         it('can overwrite total', ()=>{
-            const calculator=new Calculator();
+
             calculator.total=null;
             expect(calculator.total).toBeNull();
         })
@@ -53,7 +64,6 @@ describe("calculator.js", ()=>{
         describe('add()', ()=>{
             it('should add numbers to total', function(){
                 //TODOS: Expectations
-                const calculator=new Calculator();
                 calculator.add(5);
                 // expect total to be 5;
                 expect(calculator.total).toBe(5);
@@ -61,7 +71,6 @@ describe("calculator.js", ()=>{
 
             });
             it('returns total', ()=>{
-                const calculator=new Calculator;
                 calculator.total=50;
             
             expect(calculator.add(20)).toBe(70);
@@ -77,7 +86,6 @@ describe("calculator.js", ()=>{
         describe('subtract()', ()=>{
             it('should subtract numbers to total', function(){
                 //TODOS: Expectations
-                const calculator=new Calculator();
                 calculator.subtract(5);
                 // expect total to be -5;
                 expect(calculator.total).toBe(-5);
@@ -86,14 +94,14 @@ describe("calculator.js", ()=>{
         describe('multiply()', ()=>{
             it('should multiply numbers to total', function(){
                 //TODOS: Expectations
-                const calculator=new Calculator();
+  
                 calculator.total=5;
                 // expect total to be -5;
                 calculator.multiply(6);
                 expect(calculator.total).toBe(30);
             });
             it('does not handle NaN', ()=>{
-                const calculator=new Calculator;
+
                 calculator.total=20;
                 calculator.multiply("a")
             expect(calculator.total).toBeNaN();
@@ -102,7 +110,6 @@ describe("calculator.js", ()=>{
         describe('divide()', ()=>{
             it('should divide numbers to total', function(){
                 //TODOS: Expectations
-                const calculator=new Calculator();
                 calculator.total=25;
                 // expect total to be 5;
                 calculator.divide(5);
@@ -110,7 +117,7 @@ describe("calculator.js", ()=>{
                 expect(calculator.total).toBeTruthy();
             });  
             it('does handle divide by zero', ()=>{
-                const calculator=new Calculator;
+
                 calculator.total=20;
             
                 expect(()=>{calculator.divide(0);}).toThrow();
