@@ -76,7 +76,7 @@ describe("calculator.js", ()=>{
         expect(calculator1.divide).toBeDefined();
         expect(calculator1.subtract).toBeDefined();
     });
-    it(' ', ()=>{
+    it('can overwrite total', ()=>{
         const calculator=new Calculator();
         calculator.total=null;
         expect(calculator.total).toBeNull();
@@ -108,16 +108,11 @@ describe("calculator.js", ()=>{
        expect(typeof calculator.total).toMatch('number');
        // asymmetric matcher
        // not equal in each side
+       
        expect(calculator.total).toEqual(jasmine.anything());
        expect(()=>{}).toEqual(jasmine.anything());// All minus null & undefined
     });
 
-    it('can overwrite total', ()=>{
-        const calculator=new Calculator;
-        calculator.total=null;
-
-        expect(calculator.total).toBeNull();
-    });
 });
 
 describe("convert.js", function() {
