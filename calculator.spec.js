@@ -1,7 +1,7 @@
 describe("calculator.js", ()=>{
 
     describe("Calculator", ()=>{
-        let calculator1;
+        let calculator;
         let calculator2;
         beforeEach(()=>{
             //anything inside this block execute before
@@ -9,10 +9,7 @@ describe("calculator.js", ()=>{
             calculator= new Calculator();
             calculator2=new Calculator();
         });
-        afterEach(()=>{
-            //anything inside this block execute after
-            //each spec (it) inside describe
-        });
+
         
         it('should initialize total', function(){
             //TODOS: Expectations
