@@ -7,7 +7,9 @@ class Calculator {
     return this.total -= number;
   }
   multiply(number) {
-    return this.total *= number;
+    //debugger;
+    this.total *= number
+    return this.total ;
   }
   divide(number) {
     if (number === 0)

@@ -27,9 +27,10 @@ function calculate(inputValue){
          break;
       case "*":
          result=_calculator.multiply(numberB);
+         break;
       case "/":
          result=_calculator.divide(numberB);
-      break;
+         break;
    }
    updateResult(result);  
 }

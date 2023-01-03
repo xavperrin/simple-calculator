@@ -61,10 +61,18 @@ describe('main.js', function(){
             expect(divide).toHaveBeenCalledWith(3);
 
          });
-         xit('calls updateResult');
+         it('calls updateResult (example using and.callThrough)', ()=>{
+            spyOn(window, 'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.callThrough();
+
+            calculate('5*6');
+
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith(5*6);
+
+         });
       });
    describe('updateResult()', function(){
-
    beforeAll(function(){
          //executed ONCE before all specs
          element=document.createElement('div');
