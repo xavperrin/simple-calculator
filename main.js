@@ -26,7 +26,7 @@ function calculate(inputValue){
          result=_calculator.subtract(numberB);
          break;
       case "*":
-         result=_calculator.subtract(numberB);
+         result=_calculator.multiply(numberB);
       case "/":
          result=_calculator.divide(numberB);
       break;

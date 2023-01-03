@@ -14,8 +14,4 @@ class Calculator {
       throw new Error(`Cannot divide by zero`);
     return this.total = this.total / number;
   }
-}
-
-
-    
-                                                                                                                    
+}                                                                                                              

@@ -24,18 +24,48 @@ describe('main.js', function(){
 
 
          it('calls add', function () {
-            spyOn(Calculator.prototype, 'add');
+            const spy=spyOn(Calculator.prototype, 'add');
             calculate('3+4');
+            expect(spy).toHaveBeenCalledTimes(2);
+            expect(spy).toHaveBeenCalledWith(3);
+            expect(spy).toHaveBeenCalledWith(4);
          });
-         xit('call subtract');
-         xit('call multiply');
-         xit('call divide');
-         xit('validates operations');
+         it('call subtract', ()=>{
+            const sub=spyOn(Calculator.prototype, 'subtract');
+            const add=spyOn(Calculator.prototype, 'add');
+            calculate('3-4');
+            expect(add).toHaveBeenCalledTimes(1);
+            expect(add).toHaveBeenCalledWith(3);
+            expect(sub).toHaveBeenCalledTimes(1);
+            expect(sub).toHaveBeenCalledWith(4);
+         });
+         it('call multiply', ()=>{
+            const add=spyOn(Calculator.prototype, 'add');
+            const multi=spyOn(Calculator.prototype, 'multiply');
+            calculate('3*8');
+            expect(add).toHaveBeenCalledTimes(1);
+            expect(add).toHaveBeenCalledWith(3);
+            expect(multi).not.toHaveBeenCalledWith(3);
+            expect(multi).toHaveBeenCalledTimes(1);
+            expect(multi).toHaveBeenCalledWith(8);
+         });
+         it('call divide', ()=>{
+            const add=spyOn(Calculator.prototype, 'add');
+            const divide=spyOn(Calculator.prototype, 'divide');
+            calculate('15/3');
+
+            expect(add).toHaveBeenCalledTimes(1);
+            expect(add).toHaveBeenCalledWith(15);
+            expect(divide).not.toHaveBeenCalledWith(15);
+            expect(divide).toHaveBeenCalledTimes(1);
+            expect(divide).toHaveBeenCalledWith(3);
+
+         });
          xit('calls updateResult');
       });
    describe('updateResult()', function(){
-     
-     beforeAll(function(){
+
+   beforeAll(function(){
          //executed ONCE before all specs
          element=document.createElement('div');
          element.setAttribute('id', 'result');
@@ -53,8 +83,6 @@ describe('main.js', function(){
          updateResult('5');
          expect(this.element.innerText).toBe('5');
       });
-     
-
    });
 });
 });
