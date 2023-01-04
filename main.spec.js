@@ -71,6 +71,26 @@ describe('main.js', function(){
             expect(window.updateResult).toHaveBeenCalledWith(5*6);
 
          });
+         it('calls updateResult (example using and.callFake)', ()=>{
+            spyOn(window, 'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.callFake((number)=>{ return 'it works';});
+
+            calculate('5*6');
+
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('it works');
+
+         });
+         it('calls updateResult (example using and.returnValue)', ()=>{
+            spyOn(window, 'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.returnValue('whatever [multiply] return');//same as callFake
+
+            calculate('5*6');
+
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('whatever [multiply] return');
+
+         });
       });
    describe('updateResult()', function(){
    beforeAll(function(){
