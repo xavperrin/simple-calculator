@@ -101,6 +101,14 @@ describe('main.js', function(){
             expect(window.updateResult).toHaveBeenCalledWith('whatever [add] returns');
 
          });
+         it('does not handle errors', ()=>{
+            spyOn(Calculator.prototype, 'multiply').and.throwError('some error');
+            
+            expect(()=>{calculate('5*6')}).toThrowError('some error');//throwerror matcher see caculator.spec.js
+
+            
+
+         });
       });
    describe('updateResult()', function(){
    beforeAll(function(){
